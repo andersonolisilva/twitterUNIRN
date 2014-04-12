@@ -90,11 +90,11 @@ public class LoginServlet extends HttpServlet {
 		out.write("<head>");
 		out.write("<meta charset='ISO-8859-1'>");
 		out.write("<title>WEB I - Tente novamente</title>");
-		out.write("<link rel='stylesheet' type='text/css' href='/exemplosUNIRN/css/interno.css'>");
+		out.write("<link rel='stylesheet' type='text/css' href='/twitterUNIRN/css/interno.css'>");
 		out.write("</head>");
 		out.write("<body>");
 		out.write("<div>");
-		out.write("<h1>UsuÃ¡rio e/ou senha incorreto(os)!</h1>");
+		out.write("<h1>Usuário e/ou senha incorreto(os)!</h1>");
 		out.write("</div>");
 		out.write("</body>");
 		out.write("</html>");

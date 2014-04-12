@@ -31,7 +31,7 @@ h2 {
 }
 
 .topo {
-	background: url("/ExemplosUNIRN/img/back-topo.png");
+	background: url("/twitterUNIRN/img/back-topo.png");
 	height: 48px;
 }
 
@@ -40,8 +40,9 @@ h2 {
 	margin: 0 auto;
 }
 
-.topo .left {
+.topo .topo-central .left {
 	float: left;
+	width: 300px;
 	vertical-align: middle;
 }
 
@@ -83,9 +84,9 @@ h2 {
 	border-bottom:4px solid #808080;
 }
 
-.topo .right {
+.topo .topo-central .right {
 	float: right;
-	width: 200px;
+	width: 300px;
 	text-align: right;
 }
 

@@ -8,7 +8,7 @@
 <body>
 
 	<div class="rodape">UNI-RN - Especialização em Desenvolvimento
-		de Sistemas Corporativos - Desenvolvimento WEB I - Turma 08 - Anderson Silva</div>
+		de Sistemas Corporativos - Desenvolvimento WEB I - Turma 08</div>
 	<!-- ."rodape" -->
 
 </body>

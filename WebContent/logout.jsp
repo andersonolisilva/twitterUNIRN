@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>WEB I - Faça login</title>
-<link rel="stylesheet" type="text/css" href="/web1/css/style.css">
+<link rel="stylesheet" type="text/css" href="/twitterUNIRN/css/style.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 			
 			<h1>Você não se encontra Logado!</h1>
 			
-			<a href="/web1/index.html" title="<< Voltar">&lt;&lt; Voltar</a>
+			<a href="/twitterUNIRN/index.html" title="<< Voltar">&lt;&lt; Voltar</a>
 			
 		</div>
 		<!-- .centralizar -->

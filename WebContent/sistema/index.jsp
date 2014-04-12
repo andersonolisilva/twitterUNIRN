@@ -7,11 +7,9 @@ String login = usuario.getLogin();
 %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>WEB I - <%= nome%></title>
-<link rel="stylesheet" type="text/css" href="/ExemplosUNIRN/css/interno.css">
-</head>
+
+<%@include file="/jsp/template/head.jsp" %>
+
 <body>
 
 	<%@include file="/jsp/template/cabecalho.jsp" %>
@@ -21,21 +19,22 @@ String login = usuario.getLogin();
 			<div class="box">
 				<a href="#">
 					<div class="top">
-						<img src="/exemplosUNIRN/img/icon-big-user.png" width="50" />
-						<div class="nome"><%=nome %></div>
+						<img src="/twitterUNIRN/img/icon-big-user.png" width="50" />
+						<div class="nome"><%= nome %></div>
 						<!-- .nome -->
 					</div> <!-- .top -->
 				</a>
 				<div class="detalhe"></div>
 				<!-- .detalhe -->
 				<div class="publicacao">
-					<form action="/ExemplosUNIRN/TimelineServlet" method="post">
+					<form action="/twitterUNIRN/TimelineServlet" method="post">
 						<input type="hidden" name="operacao" value="postar">
 						<textarea name="post" title="Postar aqui" maxlength="150" id="texto"
 							onclick="this.value='';" onkeyup="limitaTextarea(this.value)"
 							onblur="javascript:if (this.value=='') {this.value='Publique aqui'};"></textarea>
+						
 						<div class="caracteres">
-							Caracteres restantes: <span id="cont">150</span>
+							Caracteres restantes: <span id="cont">150</span> <!-- Total de caracteres -->
 						</div>
 						
 						<input type="submit" value="Postar" id="postar" />

@@ -11,19 +11,19 @@
 		<div class="topo-central">
 			<div class="left">
 				<ul>
-					<li><a href="/ExemplosUNIRN/sistema/index.jsp" class="active"
-						title="Início"><img src="/ExemplosUNIRN/img/icon-home.png" /> Início</a></li>
+					<li><a href="/twitterUNIRN/sistema/index.jsp" class="active"
+						title="Início"><img src="/twitterUNIRN/img/icon-home.png" /> Início</a></li>
 					<li><a href="#" title="Descobrir"><img
-							src="/ExemplosUNIRN/img/icon-user.png" /> Buscar Usuario</a></li>
+							src="/twitterUNIRN/img/icon-user.png" /> Buscar Usuario</a></li>
 					<!-- <li><a href="#" title="Conta"><img
-							src="/ExemplosUNIRN/img/icon-user.png" /> Conta</a></li> -->
+							src="/twitterUNIRN/img/icon-user.png" /> Conta</a></li> -->
 				</ul>
 			</div>
 			<!-- .left -->
 			<div class="right">
 				<ul>
 					<li><a href="../LoginServlet?operacao=logout" title="Sair"><img
-							src="/ExemplosUNIRN/img/icon-exit.png" /> Sair</a></li>
+							src="/twitterUNIRN/img/icon-exit.png" /> Sair</a></li>
 				</ul>
 			</div>
 			<!-- .right -->
