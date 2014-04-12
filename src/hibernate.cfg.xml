@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<!-- Database connection settings Desnecessário desde JDBC4 -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/twitterunirn</property>
+		<property name="connection.username">twitterunirn</property>
+		<property name="connection.password">twitterunirn</property>
+		<!-- JDBC connection pool -->
+		<property name="connection.pool_size">2</property>
+		<!-- dialeto SQL -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<!-- Exibir a saída SQL gerada pelo Hiberante -->
+		<property name="show_sql">true</property>
+		<!-- Apagar e recriar o banco ao iniciar a aplicação -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- schema locadora -->
+		<property name="hibernate.default_schema">public</property>
+		
+		<!-- Indicação de classes persistentes -->
+		<mapping class="br.unirn.exemplos.dominio.LogAcesso" />
+		<mapping class="br.unirn.exemplos.dominio.Post" />
+		<mapping class="br.unirn.exemplos.dominio.Usuario" />
+		
+	</session-factory>
+</hibernate-configuration>

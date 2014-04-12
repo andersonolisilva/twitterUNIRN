@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>WEB I - Daniel Olinto</title>
+<link rel="stylesheet" type="text/css" href="/web1/css/style.css">
+</head>
+<body>
+
+	<div id="wrapper-login">
+
+		<div class="centralizar">
+			<form action="LoginServlet" method="post">
+				<input type="hidden" name="operacao" value="logar" />
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2">Login</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="coluna">Usuário:</td>
+							<td><input type="text" name="login" size="30" /></td>
+						</tr>
+						<tr>
+							<td class="coluna">Senha:</td>
+							<td><input type="password" name="senha" size="30" /></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="2"><input type="submit" value="Entrar" /></td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div>
+		<!-- .centralizar -->
+
+	</div>
+	<!-- #wrapper-login -->
+
+</body>
+</html>

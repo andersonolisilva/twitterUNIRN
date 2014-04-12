@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/timeline.css">
+<title>Minha TimeLine</title>
+</head>
+<body>
+	<div class="floatMenu">
+		Cadastrar Usuario | Buscar Usuario |<a href="LoginServlet?operacao=logout">Logout</a> &nbsp;&nbsp;&nbsp;&nbsp;   
+		 
+	</div>
+	<div class="content">
+		<div class="secao-esquerda">
+		
+		 	<h2>Dados do Usuário</h2>
+		</div>
+		<div class="secao-central">
+			<div class="form-post">
+				<form action="/ExemplosUNIRN/TimelineServlet">
+					<input type="hidden" name="operacao" value="postar">
+					<table>
+						<tr>
+							<td>
+							<textarea name="post" rows="6" cols="60" maxlength="150"></textarea></td>
+						</tr>
+						<tfoot>
+						
+							<tr>
+								<td colspan="2"><input type="submit"  value="Postar" id="postar"> </td>
+							</tr>
+						</tfoot>
+						
+					</table>
+				
+				</form>
+			</div>
+			<div class="timeline">
+				<h2>Tweets</h2>
+				<hr/>
+				<table class="posts">
+					<tr>
+						<td>
+						</td>
+					</tr>
+				
+				</table>
+			</div>
+		</div>
+	
+	
+	</div>
+</body>
+</html>
