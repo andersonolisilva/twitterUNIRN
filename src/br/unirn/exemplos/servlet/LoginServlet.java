@@ -94,7 +94,7 @@ public class LoginServlet extends HttpServlet {
 		out.write("</head>");
 		out.write("<body>");
 		out.write("<div>");
-		out.write("<h1>Usu·rio e/ou senha incorreto(os)!</h1>");
+		out.write("<h1>Usu√°rio e/ou senha incorreto(os)!</h1>");
 		out.write("</div>");
 		out.write("</body>");
 		out.write("</html>");
@@ -105,7 +105,8 @@ public class LoginServlet extends HttpServlet {
 
 	private void loginComSucesso(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
-		response.sendRedirect(request.getContextPath() + "/sistema/index.jsp");
+		request.getRequestDispatcher("TimelineServlet").forward(request, response);
+		
 		return;
 	}
 

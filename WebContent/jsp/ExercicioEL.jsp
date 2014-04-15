@@ -1,0 +1,93 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WEB I - Exercício EL</title>
+<link rel="stylesheet" type="text/css"
+	href="/twitterUNIRN/css/style.css">
+<style>
+b {
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="centralizar">
+			<h1>Exercício EL</h1>
+
+			<form action="/twitterUNIRN/ExercicioELServlet" method="post">
+				Valor 01 : <input type="text" name="valor1" id="valor1" /><br />
+				Valor 02 : <input type="text" name="valor2" id="valor2" /><br /> <br />
+				<input type="submit" name="Calcular" value="Calcular" />
+			</form>
+		</div>
+	</div>
+
+	<c:choose>
+		<c:when test="${valorA == ''}">
+			<div id="wrapper">
+				<div class="centralizar">
+					<h1>Preencha pelo menos o valor 1 para exibir o cálculo.</h1>
+				</div>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div id="wrapper">
+				<div class="centralizar">
+					<h1>Resultado do processamento de dados</h1>
+					Valor 01 : <b>${valorA}</b><br /> Valor 02 : <b>${valorB}</b><br />
+					<br />
+				</div>
+				<c:set var="index" value="1" />
+				<c:forEach var="valor" items="${listaVetor}">
+					<c:choose>
+						<c:when test="${index == 1}">
+							<c:set var="v1" value="${valor}"></c:set>
+						</c:when>
+						<c:when test="${index == 2}">
+							<c:set var="v2" value="${valor}"></c:set>
+						</c:when>
+						<c:when test="${index == 3}">
+							<c:set var="v3" value="${valor}"></c:set>
+						</c:when>
+					</c:choose>
+					<c:set var="index" value="${index+1}" />
+				</c:forEach>
+
+				<div class="centralizar">
+					Na JSP, com EL: <br /> <br /> - Exibir primeiro e segundo
+					elementos do vetor;<br /> Primeiro elemento: <b>${v1}</b><br />
+					Segundo elemento: <b>${v2}</b><br /> <br /> - Somar os três
+					valores do vetor: (<b>${v1} + ${v2 } + ${v3 }</b>) = <b>${v1+v2+v3}</b><br />
+					<br /> - Multiplicar os três valores do vetor: (<b>${v1} x
+						${v2 } x ${v3 }</b>) = <b>${v1*v2*v3}</b><br /> <br /> - Exibir o
+					resultado da comparação se: <br /> - O primeiro valor <b>${v1 }</b>
+					é maior do que zero: <b><c:choose>
+							<c:when test="${v1>0 }">Sim</c:when>
+							<c:otherwise>Não</c:otherwise>
+						</c:choose></b> <br /> - O segundo valor <b>${v2 }</b> é menor do que zero: <b><c:choose>
+							<c:when test="${v2<0 }">Sim</c:when>
+							<c:otherwise>Não</c:otherwise>
+						</c:choose></b> <br /> <br /> - Exibir o resultado da comparação se: <br /> -
+					O primeiro valor <b>${v1 }</b> é maior do que zero: <b><c:choose>
+							<c:when test="${v1>0 }">Sim</c:when>
+							<c:otherwise>Não</c:otherwise>
+						</c:choose></b> <br /> - O segundo valor <b>${v2 }</b> é maior do que zero: <b><c:choose>
+							<c:when test="${v2>0 }">Sim</c:when>
+							<c:otherwise>Não</c:otherwise>
+						</c:choose></b> <br /> <br />
+
+				</div>
+			</div>
+		</c:otherwise>
+	</c:choose>
+
+</body>
+</html>

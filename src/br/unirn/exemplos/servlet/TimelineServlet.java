@@ -1,6 +1,7 @@
 package br.unirn.exemplos.servlet;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -19,63 +20,59 @@ import br.unirn.exemplos.dominio.Usuario;
 @WebServlet("/TimelineServlet")
 public class TimelineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TimelineServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public TimelineServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
 		String operacao = request.getParameter("operacao");
 		String mensagem = request.getParameter("post");
-		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
-		
-		if (operacao != null && operacao.equals("postar")){
+		Usuario usuario = (Usuario) request.getSession().getAttribute(
+				"usuarioLogado");
 
-			/*@SuppressWarnings("unchecked")
-			List<String> tweets = (List<String>) request.getSession().getAttribute("tweets");
+		if (operacao != null && operacao.equals("postar")) {
 
-			if (tweets == null){
-				tweets = new ArrayList<String>();
-			}
-
-			tweets.add(request.getParameter("post"));
-
-			request.getSession().setAttribute("tweets", tweets);
-
-			//request.getRequestDispatcher(request.getContextPath()+"/sistema/timeline.html").forward(request, response);
-*/			
-			
 			PostDAO dao = new PostDAO();
 			Post post = new Post();
 			post.setDataCadastro(new Date());
 			post.setMensagem(mensagem);
 			post.setUsuario(usuario);
-			
+
 			dao.save(post);
 			dao.close();
-			
-			response.sendRedirect(request.getContextPath() + "/sistema/index.jsp");
-			
+
 		}
+
+		PostDAO daoLista = new PostDAO();
+		Collection<Post> listaPost = (Collection<Post>) daoLista
+				.getPostByUser(usuario);
+		request.setAttribute("listaPost", listaPost);
+
+		request.getRequestDispatcher("/sistema/index.jsp").forward(request,
+				response);
+
 		return;
 
 	}
 
-	
 }

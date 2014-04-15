@@ -22,7 +22,7 @@
 			<!-- .left -->
 			<div class="right">
 				<ul>
-					<li><a href="../LoginServlet?operacao=logout" title="Sair"><img
+					<li><a href="/twitterUNIRN/LoginServlet?operacao=logout" title="Sair"><img
 							src="/twitterUNIRN/img/icon-exit.png" /> Sair</a></li>
 				</ul>
 			</div>
