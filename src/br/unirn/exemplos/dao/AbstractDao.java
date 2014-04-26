@@ -39,6 +39,7 @@ public abstract class AbstractDao<T> implements InterfaceDao<T> {
 
 	public Session getSession() {
 		if (session == null || !session.isOpen()) {
+			//session = DAOFactory.getInstance().openSession();
 			session = DAOFactory.getInstance().openSession();
 		}
 		if (session.getTransaction() == null

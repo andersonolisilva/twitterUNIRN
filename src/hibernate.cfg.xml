@@ -23,6 +23,7 @@
 		<mapping class="br.unirn.exemplos.dominio.LogAcesso" />
 		<mapping class="br.unirn.exemplos.dominio.Post" />
 		<mapping class="br.unirn.exemplos.dominio.Usuario" />
+		<mapping class="br.unirn.exemplos.dominio.Seguidor" />
 		
 	</session-factory>
 </hibernate-configuration>

@@ -17,7 +17,7 @@ a {
 	text-decoration: none;
 }
 
-a:HOVER {
+a:hover {
 	text-decoration: underline;
 }
 
@@ -56,6 +56,16 @@ h2 {
 	display: inline;
  }
 
+.left form {
+	display: inline-block;
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+
+.left form, .right form { 
+	display: inline;
+ }
 .left ul li a, .right ul li a {
 	padding: 12px 15px 9px 15px;
 	display: inline-block;
@@ -86,8 +96,42 @@ h2 {
 
 .topo .topo-central .right {
 	float: right;
-	width: 300px;
+	width: 700px;
 	text-align: right;
+}
+
+.right input[type="text"]{
+	font-size: 12px;
+	padding: 7px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border: 1px solid #CCC;
+	margin: 6px 10px 0 10px;
+	width: 202px;
+	color: #dadee0;
+	background-color: #a3acb2;
+}
+
+.right input[type="text"]:hover{
+	background-color: #66757f;
+}
+
+.right input[type="submit"] {
+	padding: 5px 10px;
+	float: right;
+	margin: 9px 13px 0 0;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border: 1px solid #CCC;
+	font-weight: bold;
+	color: #7b7a7a;
+}
+
+.right input[type="submit"]:hover {
+	cursor: pointer;
+	background: #EEE;
 }
 
 .wrapper {
@@ -104,7 +148,7 @@ h2 {
 
 .side-left .box {
 	width: 100%;
-	height: 325px; /* 220px; */
+	height: 312px; /* 220px; */
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -118,7 +162,7 @@ h2 {
 
 .box .top {
 	width: 100%;
-	height: 145px;
+	height: 140px;
 	border-bottom: 1px solid #e1e8ed;
 	border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
@@ -142,33 +186,20 @@ h2 {
 }
 
 .box .top .login {
-	font-size: 16px;
+	font-size: 14px;
 	width: 100%;
 	text-align: center;
-	margin-top: 5px;
 }
 
-.login a:hover {
-	text-decoration: none;
+.box .top .login a:hover {
+	text-decoration: none important;
 }
 
 .box .detalhe {
 	width: 100%;
-	height: 50px;
+	height: 45px;
 	background-color: #FFF;
 	border-bottom: 1px solid #e1e8ed;
-}
-
-.box .detalhe .titulo {
-	text-transform: uppercase;
-	font-size: 10px;
-	padding: 8px 0 0 15px;
-}
-
-.box .detalhe .numeracao {
-	font-size: 18px;
-	font-weight: bold;
-	padding: 0 0 0 15px;
 }
 
 .box .publicacao {
@@ -194,7 +225,7 @@ h2 {
 .box .publicacao input[type="submit"] {
 	padding: 5px 10px;
 	float: right;
-	margin: 8px 13px 0 0;
+	margin: 5px 13px 0 0;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -209,13 +240,13 @@ h2 {
 }
 
 .box .publicacao .caracteres {
-	margin: 14px 0 0 10px;
+	margin: 10px 0 0 10px;
 	float: left;
 }
 
 .side-left .box2 {
 	width: 100%;
-	height: 200px;
+	height: 220px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -225,12 +256,14 @@ h2 {
 
 .side-right {
 	width: 600px;
-	height: auto;
+	min-height: 60px;
+	max-height: 100%;
 	float: right;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	background-color: white;
+	padding-bottom: 10px;
 }
 
 .side-right .titulo {
@@ -239,15 +272,34 @@ h2 {
 	font-size: 22px;
 }
 
-.side-right .conteudo {
-	border-bottom: 1px solid #e1e8ed;
+.side-right .postagem {
+	border-bottom: 1px solid #dddddd;
 	padding: 10px;
-	font-size: 14px;
-	margin-bottom: 5px;
+	float: left;
+	width: 96.8%;
 }
 
-.side-right .conteudo .usuario {
-	margin-bottom: 7px;
+a:hover .postagem {
+	background-color: #f5f5f5;
+}
+
+.side-right .postagem .usuario {
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	color: #292f33;
+}
+
+.side-right .postagem .usuario .data {
+	color: #9699a6;
+	font-size: 14px;
+	font-weight: normal;
+	
+}
+
+.side-right .postagem .mensagem {
+	margin-top: 25px;
+	font-size: 14px;
 }
 
 .rodape {

@@ -1,5 +1,7 @@
 package br.unirn.exemplos.dao;
 
+import java.util.List;
+
 import org.hibernate.Query;
 
 import br.unirn.exemplos.dominio.Usuario;
@@ -25,7 +27,7 @@ public class UsuarioDao extends AbstractDao<Usuario> {
 	public Usuario autenticar(String login, String senha){
 		
 		Query q = DAOFactory.getInstance().getSession()
-				  .createQuery("from Usuario where login = :login and senha = :senha");
+				  .createQuery("from Usuario u where u.login = :login and u.senha = :senha");
 	    q.setString("login", login);
 	    q.setString("senha", senha);
 	    
@@ -39,4 +41,15 @@ public class UsuarioDao extends AbstractDao<Usuario> {
 	    return u;
 	}
 	
+	public List<Usuario> findByBuscarUsuario(String texto){
+		
+		Query q = DAOFactory.getInstance().getSession().
+				createQuery("from Usuario where login like :texto or nome like :texto");
+		q.setString("texto", "%"+texto+"%");
+		@SuppressWarnings("unchecked")
+		List<Usuario> usuarios = q.list();
+		
+		return usuarios;
+	}
+		
 }

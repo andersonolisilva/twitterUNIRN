@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 
 
 /**
- * Fábrica de sessoes para acesso a banco de dados
+ * FÃ¡brica de sessoes para acesso a banco de dados
  * @author RAUL
  *
  */
@@ -33,7 +33,7 @@ public class DAOFactory {
 		return singleton;
 	}
 
-	public Session openSession() {
+	public Session openSession() {		
 		return sf.openSession();
 	}
 	

@@ -1,8 +1,10 @@
 package br.unirn.exemplos.servlet;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,6 +44,7 @@ public class TimelineServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
@@ -64,8 +67,18 @@ public class TimelineServlet extends HttpServlet {
 		}
 
 		PostDAO daoLista = new PostDAO();
-		Collection<Post> listaPost = (Collection<Post>) daoLista
-				.getPostByUser(usuario);
+		List<Post> listaPost = (List<Post>) daoLista.getPostByUser(usuario);
+
+		// Em ordem decrescente de post
+		Collections.sort(listaPost, new Comparator() {
+			public int compare(Object o1, Object o2) {
+				Post p1 = (Post) o1;
+				Post p2 = (Post) o2;
+				return p1.getId() < p2.getId() ? +1
+						: (p1.getId() > p2.getId() ? -1 : 0);
+			}
+		});
+
 		request.setAttribute("listaPost", listaPost);
 
 		request.getRequestDispatcher("/sistema/index.jsp").forward(request,
@@ -74,5 +87,4 @@ public class TimelineServlet extends HttpServlet {
 		return;
 
 	}
-
 }

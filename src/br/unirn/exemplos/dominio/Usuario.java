@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
+
 @Entity
 public class Usuario {
 
@@ -35,6 +36,20 @@ public class Usuario {
 	@OneToMany(mappedBy="usuario")
 	private List<Post> posts;
 
+	@OneToMany(mappedBy="seguidor")
+	private List<Seguidor> seguidor;
+
+	@OneToMany(mappedBy="seguido")
+	private List<Seguidor> seguido;
+	
+	public List<Seguidor> getSeguido() {
+		return seguido;
+	}
+
+	public void setSeguido(List<Seguidor> seguido) {
+		this.seguido = seguido;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -49,14 +64,6 @@ public class Usuario {
 
 	public void setLogin(String login) {
 		this.login = login;
-	}
-
-	public Date getDataCadastro() {
-		return dataCadastro;
-	}
-
-	public void setDataCadastro(Date dataCadastro) {
-		this.dataCadastro = dataCadastro;
 	}
 
 	public String getSenha() {
@@ -83,6 +90,14 @@ public class Usuario {
 		this.descricaoPessoal = descricaoPessoal;
 	}
 
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
 	public List<Post> getPosts() {
 		return posts;
 	}
@@ -90,7 +105,14 @@ public class Usuario {
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
 	}
-	
+
+	public List<Seguidor> getSeguidor() {
+		return seguidor;
+	}
+
+	public void setSeguidor(List<Seguidor> seguidor) {
+		this.seguidor = seguidor;
+	}
 	
 	
 }

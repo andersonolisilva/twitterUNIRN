@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
 			if (session != null) {
 				session.invalidate();
 			}
-			response.sendRedirect(request.getContextPath() + "/index.html");
+			response.sendRedirect(request.getContextPath() + "/index.jsp");
 		}
 		return;
 		// response.sendRedirect(request.getContextPath()+"/index.html");
@@ -105,8 +105,9 @@ public class LoginServlet extends HttpServlet {
 
 	private void loginComSucesso(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
-		request.getRequestDispatcher("TimelineServlet").forward(request, response);
-		
+		request.getRequestDispatcher("TimelineServlet").forward(request,
+				response);
+
 		return;
 	}
 

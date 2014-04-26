@@ -11,11 +11,6 @@
 <title>WEB I - Exercício EL</title>
 <link rel="stylesheet" type="text/css"
 	href="/twitterUNIRN/css/style.css">
-<style>
-b {
-	font-size: 16px;
-}
-</style>
 </head>
 <body>
 	<div id="wrapper">
@@ -42,7 +37,7 @@ b {
 			<div id="wrapper">
 				<div class="centralizar">
 					<h1>Resultado do processamento de dados</h1>
-					Valor 01 : <b>${valorA}</b><br /> Valor 02 : <b>${valorB}</b><br />
+					Valor 01 : ${valorA}<br /> Valor 02 : ${valorB}<br /> <br />
 					<br />
 				</div>
 				<c:set var="index" value="1" />
@@ -62,27 +57,37 @@ b {
 				</c:forEach>
 
 				<div class="centralizar">
-					Na JSP, com EL: <br /> <br /> - Exibir primeiro e segundo
-					elementos do vetor;<br /> Primeiro elemento: <b>${v1}</b><br />
-					Segundo elemento: <b>${v2}</b><br /> <br /> - Somar os três
-					valores do vetor: (<b>${v1} + ${v2 } + ${v3 }</b>) = <b>${v1+v2+v3}</b><br />
-					<br /> - Multiplicar os três valores do vetor: (<b>${v1} x
-						${v2 } x ${v3 }</b>) = <b>${v1*v2*v3}</b><br /> <br /> - Exibir o
-					resultado da comparação se: <br /> - O primeiro valor <b>${v1 }</b>
-					é maior do que zero: <b><c:choose>
-							<c:when test="${v1>0 }">Sim</c:when>
-							<c:otherwise>Não</c:otherwise>
-						</c:choose></b> <br /> - O segundo valor <b>${v2 }</b> é menor do que zero: <b><c:choose>
-							<c:when test="${v2<0 }">Sim</c:when>
-							<c:otherwise>Não</c:otherwise>
-						</c:choose></b> <br /> <br /> - Exibir o resultado da comparação se: <br /> -
-					O primeiro valor <b>${v1 }</b> é maior do que zero: <b><c:choose>
-							<c:when test="${v1>0 }">Sim</c:when>
-							<c:otherwise>Não</c:otherwise>
-						</c:choose></b> <br /> - O segundo valor <b>${v2 }</b> é maior do que zero: <b><c:choose>
-							<c:when test="${v2>0 }">Sim</c:when>
-							<c:otherwise>Não</c:otherwise>
-						</c:choose></b> <br /> <br />
+					Na JSP, com EL: <br />
+					<br /> -Exibir primeiro e segundo elementos do vetor;<br />
+					Primeiro elemento:
+					${v1}<br /> Segundo elemento: ${v2}<br /><br />
+					
+					-Somar os três valores do vetor: (${v1} + ${v2 } + ${v3 }) = ${v1+v2+v3}<br /><br /> 
+					-Multiplicar os três valores do vetor: (${v1} x ${v2 } x ${v3 }) = ${v1*v2*v3}<br /><br />
+					
+					-Exibir o resultado da comparação se: <br />
+					  -O primeiro valor ${v1 } é maior do que zero: 
+					  <c:choose>
+					   <c:when test="${v1>0 }">Sim</c:when>
+					   <c:otherwise>Não</c:otherwise>
+					  </c:choose> <br />
+					  -O segundo valor ${v2 } é menor do que zero:
+					   <c:choose>
+					   <c:when test="${v2<0 }">Sim</c:when>
+					   <c:otherwise>Não</c:otherwise>
+					  </c:choose> <br /><br />
+					  
+					 -Exibir o resultado da comparação se: <br />
+					  -O primeiro valor ${v1 } é maior do que zero: 
+					  <c:choose>
+					   <c:when test="${v1>0 }">Sim</c:when>
+					   <c:otherwise>Não</c:otherwise>
+					  </c:choose> <br /> 
+					  -O segundo valor ${v2 } é maior do que zero: 
+					  <c:choose>
+					   <c:when test="${v2>0 }">Sim</c:when>
+					   <c:otherwise>Não</c:otherwise>
+					  </c:choose> <br /><br />
 
 				</div>
 			</div>
